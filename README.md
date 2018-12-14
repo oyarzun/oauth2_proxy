@@ -69,6 +69,7 @@ Valid providers are :
 * [GitHub](#github-auth-provider)
 * [GitLab](#gitlab-auth-provider)
 * [LinkedIn](#linkedin-auth-provider)
+* [Zendesk](#zendesk-auth-provider)
 
 The provider can be selected using the `provider` configuration value.
 
@@ -194,6 +195,12 @@ OpenID Connect is a spec for OAUTH 2.0 + identity that is implemented by many ma
 If you enable cookie-refresh, it should be set to the same duration as token lifetime
 (due to a limitation in `oauth2_proxy` - see [bitly/oauth2_proxy#620](https://github.com/bitly/oauth2_proxy/pull/620)).
 
+### Zendesk Auth Provider
+
+1. Follow these steps to register Zendesk OAuth2 application: [Register your application with Zendesk](https://support.zendesk.com/hc/en-us/articles/203663836-Using-OAuth-authentication-with-your-application#topic_s21_lfs_qk).
+2. For "Redirect URLs", provide `https://internal.yourcompany.com/oauth2/callback`.
+3. Provide **Unique Identifier** (passed as `--client-id`) and take note of **Secret** (passed as `--client-secret`).
+3. Provide your subdomain via the `--zendesk-subdomain=<YOUR SUBDOMAIN>` option.
 
 ## Email Authentication
 
